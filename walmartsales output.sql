@@ -16,15 +16,14 @@ alter table sales
 add column day_name varchar(20)
 
 update sales 
-set day_name =extract(DOW from date)::text;
+set day_name =to_char(date,day_name);
 
 select * from sales
 --3.	Add month_name column?
 alter table sales
 add column month_name varchar(20);
 update sales 
-set month_name= extract(month from date)
-
+set month_name=to_char(date,'month')
  --4.	What is the most selling product line?
 
 select product_line,sum(quantity)as qty from sales 
