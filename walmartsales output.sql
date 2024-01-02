@@ -52,7 +52,7 @@ order by largest_rev desc
 
 with product_sales  as( 
 select product_line,round(avg(quantity)) as avg_sales,case when
-	 avg(quantity) >=5 then 'Good'
+	 avg(quantity) >5.5 then 'Good'
 	else 'Bad' 
 	end as remark
 	from sales
