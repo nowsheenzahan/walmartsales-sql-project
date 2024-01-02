@@ -76,8 +76,8 @@ from sales
 group by product_line
 
 --12.What is the gender distribution per branch?
-select gender,count(gender)as gen_count from sales where branch='C'
-group by gender
+select gender,branch,count(gender)as gen_count from sales 
+group by gender,branch
 order by gen_count desc
 
 --13 Which time of the day do customers give most ratings?
