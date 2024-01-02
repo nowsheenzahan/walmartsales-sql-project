@@ -91,7 +91,7 @@ select
 	time_of_day,
 	count(*) as total_sales
 from sales
-where day_name = '1'
+where day_name = 'sunday'
 group by time_of_day 
 order by total_sales desc;
 
